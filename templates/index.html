@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IR Optimization System</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <main class="page-shell">
+        <section class="hero">
+            <div class="hero-copy">
+                <p class="eyebrow">Compiler Design Lab</p>
+                <h1>Intermediate Representation Optimization System</h1>
+                <p class="hero-text">
+                    Paste a simplified C-like program and inspect each academic phase:
+                    TAC generation, basic block formation, CFG construction, DAG-style
+                    local optimization, and SSA conversion.
+                </p>
+            </div>
+            <div class="hero-card">
+                <div class="chip">Flask Frontend</div>
+                <div class="chip">Readable Python Backend</div>
+                <div class="chip">Academic Workflow</div>
+            </div>
+        </section>
+
+        <section class="panel input-panel">
+            <form method="POST">
+                <label for="code">Input Program</label>
+                <textarea id="code" name="code" spellcheck="false" placeholder="Write your simplified C-like code here...">{{ code }}</textarea>
+                <div class="actions">
+                    <button type="submit">Run Optimization</button>
+                </div>
+            </form>
+        </section>
+
+        {% if error %}
+        <section class="panel error-panel">
+            <h2>Error</h2>
+            <pre>{{ error }}</pre>
+        </section>
+        {% endif %}
+
+        {% if results %}
+        <section class="results-grid">
+            <article class="panel result-card">
+                <h2>Original TAC</h2>
+                <pre>{{ results.original_tac }}</pre>
+            </article>
+            <article class="panel result-card">
+                <h2>Basic Blocks</h2>
+                <pre>{{ results.basic_blocks }}</pre>
+            </article>
+            <article class="panel result-card">
+                <h2>CFG</h2>
+                <pre>{{ results.cfg }}</pre>
+            </article>
+            <article class="panel result-card">
+                <h2>Optimized TAC</h2>
+                <pre>{{ results.optimized_tac }}</pre>
+            </article>
+            <article class="panel result-card full-width">
+                <h2>SSA Form</h2>
+                <pre>{{ results.ssa_form }}</pre>
+            </article>
+        </section>
+        {% else %}
+        <section class="panel note-panel">
+            <h2>How It Works</h2>
+            <div class="note-grid">
+                <div>
+                    <h3>Phase 1</h3>
+                    <p>TAC generation translates expressions and control flow into compact three-address instructions.</p>
+                </div>
+                <div>
+                    <h3>Phase 2</h3>
+                    <p>Basic block formation groups straight-line instruction regions between leaders.</p>
+                </div>
+                <div>
+                    <h3>Phase 3</h3>
+                    <p>The CFG shows branch and fallthrough edges between basic blocks.</p>
+                </div>
+                <div>
+                    <h3>Phase 4</h3>
+                    <p>DAG-style local optimization removes repeated expressions and folds constants.</p>
+                </div>
+                <div>
+                    <h3>Phase 5</h3>
+                    <p>SSA conversion versions variables and inserts simple phi nodes at merge points.</p>
+                </div>
+            </div>
+        </section>
+        {% endif %}
+    </main>
+</body>
+</html>
