@@ -36,7 +36,7 @@ body {
 
 .hero {
     display: grid;
-    grid-template-columns: 2fr 1fr;
+    /* grid-template-columns: 2fr 1fr;x */
     gap: 24px;
     align-items: stretch;
     margin-bottom: 24px;
@@ -50,6 +50,7 @@ body {
     border: 1px solid var(--border);
     border-radius: var(--radius);
     box-shadow: var(--shadow);
+    width: 100%;
 }
 
 .hero-copy {

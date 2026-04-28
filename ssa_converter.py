@@ -1,9 +1,4 @@
-"""
-ssa_converter.py
 
-Converts optimized TAC into a readable SSA-like form with simple phi insertion
-for merge blocks produced by if-else control flow.
-"""
 
 from __future__ import annotations
 

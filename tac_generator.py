@@ -1,8 +1,4 @@
-"""
-tac_generator.py
 
-Generates Three Address Code (TAC) from the AST.
-"""
 
 from __future__ import annotations
 

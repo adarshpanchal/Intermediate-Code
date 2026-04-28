@@ -1,8 +1,4 @@
-"""
-basic_blocks.py
 
-Forms basic blocks from TAC by identifying leaders.
-"""
 
 from __future__ import annotations
 

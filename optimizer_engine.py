@@ -1,11 +1,4 @@
-"""
-optimizer_engine.py
 
-Wrapper module that exposes a single integration function used by Flask:
-    process_code(input_code)
-
-The core optimization logic stays in the supporting modules.
-"""
 
 from __future__ import annotations
 

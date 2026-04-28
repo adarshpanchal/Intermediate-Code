@@ -1,8 +1,4 @@
-"""
-main.py
 
-Simple CLI entry point for the academic optimization pipeline.
-"""
 
 from __future__ import annotations
 

@@ -1,12 +1,4 @@
-"""
-dag_optimizer.py
 
-Per-basic-block local optimization using value numbering in the spirit of DAG
-optimization. It performs:
-- constant folding
-- common subexpression elimination
-- alias propagation for redundant temporaries
-"""
 
 from __future__ import annotations
 

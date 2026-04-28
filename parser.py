@@ -1,22 +1,4 @@
-"""
-parser.py
 
-Academic parser for a small C-like language used by the optimization demo.
-
-Supported constructs:
-- integer variables
-- one-dimensional arrays
-- arithmetic and relational expressions
-- assignments
-- for loops
-- increment and decrement statements
-- if-else
-- while
-- user-defined functions
-- function calls
-
-The parser builds a compact AST that later phases consume.
-"""
 
 from __future__ import annotations
 

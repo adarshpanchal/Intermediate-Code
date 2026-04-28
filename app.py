@@ -1,9 +1,4 @@
-"""
-app.py
 
-Flask frontend for the intermediate representation optimization system.
-The web layer only calls process_code(input_code) from optimizer_engine.py.
-"""
 
 from __future__ import annotations
 

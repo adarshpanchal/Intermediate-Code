@@ -1,8 +1,4 @@
-"""
-cfg.py
 
-Builds a control flow graph from basic blocks.
-"""
 
 from __future__ import annotations
 
